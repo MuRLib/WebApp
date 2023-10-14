@@ -1,0 +1,40 @@
+.dataTables_length {
+    padding-top: 0.5rem !important;
+    white-space: nowrap;
+}
+
+.dataTables_info {
+    padding-top: 0.6rem !important;
+    white-space: nowrap;
+}
+
+.td-button {
+    width: 75px;
+    text-align: center;
+}
+
+th.text-left{
+    padding-left: 0.5%;
+}
+td.text-left{
+    padding-left: 0.5%;
+}
+th.text-right{
+    padding-right: 0.5%;
+}
+td.text-right{
+    padding-right: 0.5%;
+}
+
+td > button{
+    width: 100%;
+    height: 100%;
+    padding: 0% !important;
+    border-radius: 0% !important;
+}
+
+td {
+    white-space: nowrap;     
+    overflow: hidden;        
+    text-overflow: ellipsis; 
+}

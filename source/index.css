@@ -1,0 +1,336 @@
+.card {
+    /*margin: 10px;*/
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-header[data-toggle] {
+    cursor: pointer;
+}
+
+.card-header[data-toggle]:hover {
+    background-color: #f0f0f0;
+}
+
+.list-group-item {
+    padding: 5px;
+}
+
+a i.fa-youtube {
+    color: red !important;
+}    
+
+.hr-1 {
+    display: block;
+    margin: 0.5em 0.5em auto auto;
+    /*margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;*/
+    border-style: inset;
+    border-width: 1px;
+}
+
+.btn-light
+{
+    background-color: white;
+}
+
+.input-group-append .btn, .input-group-prepend .btn {
+    position: relative;
+    z-index: auto;
+}
+
+label {
+    font-weight: bold
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu a::after {
+        transform: rotate(-90deg);
+        position: absolute;
+        right: 3px;
+        top: 40%;
+    }
+
+    .dropdown-submenu:hover .dropdown-menu, .dropdown-submenu:focus .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute !important;
+        margin-top: -30px;
+        left: 100%;
+    }
+
+.dropdown-submenu-left {
+    position: relative;
+}
+
+    .dropdown-submenu-left a::after {
+        transform: rotate(90deg);
+        position: absolute;
+        left: 3px;
+        top: 40%;
+    }
+
+    .dropdown-submenu-left:hover .dropdown-menu, .dropdown-submenu-left:focus .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute !important;
+        margin-top: -30px;
+        right: 100%;
+    }
+
+.dropdown-submenu-left {
+    float: none;
+}
+
+    .dropdown-submenu-left > .dropdown-menu {
+        left: -100%;
+        margin-left: 0px;
+        -webkit-border-radius: 6px 0 6px 6px;
+        -moz-border-radius: 6px 0 6px 6px;
+        border-radius: 6px 0 6px 6px;
+    }
+
+@media (max-width: 992px) {
+
+    .dropdown-menu {
+        width: 50%;
+    }
+
+        .dropdown-menu .dropdown-submenu {
+            width: auto;
+        }
+}
+
+@media (max-width: 1680px)
+{
+    .d-xxl-inline {
+        display: none !important;
+    }
+}
+
+.control-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.form-group {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.form-control:focus {
+    border-color: #0000FF;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 255, 0.6);
+}
+
+.shadow-xs-inset {
+    -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.5);
+}
+
+.shadow-sm-inset {
+    -webkit-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.5);
+}
+
+.shadow-md-inset {
+    -webkit-box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 3px 3px rgba(0,0,0,0.5);
+}
+
+.shadow-lg-inset {
+    -webkit-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.5);
+}
+
+.shadow-xs {
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.5);
+}
+
+.shadow-sm {
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+}
+
+.shadow-md {
+    -webkit-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.5);
+}
+
+.shadow-lg {
+    -webkit-box-shadow: 0px 0px 9px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 9px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 9px 5px rgba(0,0,0,0.5);
+}
+
+.shadow-xs-up {
+    -webkit-box-shadow: 0px -3px 3px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px -3px 3px -5px rgba(0,0,0,0.5);
+    box-shadow: 0px -3px 3px -5px rgba(0,0,0,0.5);
+}
+
+.shadow-sm-up {
+    -webkit-box-shadow: 0px -4px 4px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px -4px 4px -5px rgba(0,0,0,0.5);
+    box-shadow: 0px -4px 4px -5px rgba(0,0,0,0.5);
+}
+
+.shadow-md-up {
+    -webkit-box-shadow: 0px -6px 6px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px -6px 6px -5px rgba(0,0,0,0.5);
+    box-shadow: 0px -6px 6px -5px rgba(0,0,0,0.5);
+}
+
+.shadow-lg-up {
+    -webkit-box-shadow: 0px -8px 8px -5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px -8px 8px -5px rgba(0,0,0,0.5);
+    box-shadow: 0px -8px 8px -5px rgba(0,0,0,0.5);
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.link-area {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 2em;
+    margin: -2em;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+.select2-dropdown {
+    border: 1px solid #ced4da !important;
+    border-radius: 0 !important;
+    color: #495057 !important;
+}
+
+.select2-results__option[aria-selected=true] {
+    background-color: #b3d7ff !important;
+}
+
+.select2-results__option--highlighted[aria-selected] {
+    background-color: #007bff !important;
+}
+
+.select2-selection--single {
+    -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.5);
+    border-radius: 0 !important;
+    border: 1px solid #ced4da !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    height: calc(2.25rem + 2px) !important;
+    padding: 0.375rem 1.5rem 0.375rem 0.75rem !important;
+}
+
+    .select2-selection--single .select2-selection__rendered {
+        color: #495057 !important;
+        padding: 0 0 0 0 !important;
+    }
+
+    .select2-selection--single .select2-selection__placeholder {
+        color: #6c757d !important;
+    }
+
+    .select2-selection--single .select2-selection__arrow {
+        height: 100% !important;
+    }
+
+        .select2-selection--single .select2-selection__arrow b {
+            border-color: #ced4da transparent transparent transparent !important;
+        }
+
+.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #ced4da transparent !important;
+}
+
+.select2-search--dropdown .select2-search__field {
+    border: 1px solid #ced4da !important;
+    color: #495057 !important;
+}
+
+.select2-selection--multiple {
+    border-radius: 0 !important;
+    border: 1px solid #ced4da !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    min-height: calc(2.25rem + 2px) !important;
+}
+
+    .select2-selection--multiple .select2-selection__choice {
+        background-color: #007bff !important;
+        border: 1px solid #0062cc !important;
+        border-radius: 0 !important;
+        color: #fff !important;
+        margin-right: 0.375rem !important;
+        margin-top: 0.375rem !important;
+        padding: 0 0.375rem !important;
+    }
+
+    .select2-selection--multiple .select2-selection__choice__remove {
+        color: #0056b3 !important;
+        margin-right: 0.375rem !important;
+        font-size: 1.5rem;
+        line-height: 0.75;
+    }
+
+        .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: #66b0ff !important;
+        }
+
+.fa-input {
+    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }

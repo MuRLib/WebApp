@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="dark" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>M.R. Library</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
+
+    <!--link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.6/b-2.4.2/cr-1.7.0/fh-3.4.0/r-2.5.0/sc-2.2.0/sl-1.7.0/datatables.min.css" /-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-1.13.6/b-2.4.2/b-html5-2.4.2/cr-1.7.0/fc-4.3.0/fh-3.4.0/r-2.5.0/sc-2.2.0/sl-1.7.0/sr-1.3.0/datatables.min.css" />
+    <link rel='stylesheet' href="source/index.css" />
+    <link rel='stylesheet' href="source/tables.css" />
+    
+    <script src="https://kit.fontawesome.com/632e046160.js" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <!--script type='text/javascript' src="https://cdn.datatables.net/v/bs5/dt-1.13.6/b-2.4.2/cr-1.7.0/fh-3.4.0/r-2.5.0/sc-2.2.0/sl-1.7.0/datatables.min.js"></script-->
+    <script type='text/javascript' src="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-1.13.6/b-2.4.2/b-html5-2.4.2/cr-1.7.0/fc-4.3.0/fh-3.4.0/r-2.5.0/sc-2.2.0/sl-1.7.0/sr-1.3.0/datatables.min.js"></script>
+    <script type='text/javascript' src="https://cdn.datatables.net/plug-ins/1.13.6/pagination/bootstrap_input.js"></script>
+    <script type='text/javascript' src="source/data.js?id=5798"></script>
+    <script type='text/javascript' src="source/index.js?id=5799"></script>
+    <script type='text/javascript' src="source/utils.js?id=5798"></script>
+    
+
+</head>
+
+<body id="page-top" style="overflow-y: scroll;">
+    <br style="height: 100px;" />
+    <div class="container" id="music-library" style="max-width: 95%;">
+
+        <style>
+             
+            .highlight-radio {
+                position: relative;
+            }
+               
+            label.highlight-radio:has(> input[type="radio"]:checked) {
+                background-color: var(--bs-primary);
+                border-color: var(--bs-primary);
+            }
+
+            table.display {
+                background-color: #453e30;
+                color: white;
+            }
+
+            table.table-bordered.dataTable th {
+                border-bottom-width: 0.16rem;
+                border-color: #000000;
+                border-right-width: 0.1rem;
+                height: 2rem;
+            }
+
+            table.table-bordered.dataTable td {
+                border-bottom-width: 0.1rem;
+                border-right-width: 0.1rem;
+                border-bottom-color: #000000;
+                border-right-color: rgba(0, 0, 0, 0.1);
+                border-left-color: rgba(0, 0, 0, 0.1);
+            }
+
+            .cell-button-yt,
+            .cell-button {
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                padding: 2px;
+                position: relative;
+                display: block;
+            }
+
+            .cell-button::before {
+                content: '\f002';/*\f0da f0c1*/
+                font-family: FontAwesome;
+                margin-right: 5px;
+                opacity: 0.3;
+                transition: opacity 0.3s;
+            }
+
+            .cell-button-yt::before {
+                content: '\f16a';
+                font-family: FontAwesome;
+                margin-right: 5px;
+                opacity: 0.3;
+                transition: opacity 0.3s;
+            }
+
+            .cell-button-yt:hover::before,
+            .cell-button:hover::before {
+                opacity: 1;
+            }
+
+            .cell-rating {
+                display: inline-block;
+                margin: 0.33rem auto;
+                width: 60%;
+                height: 60%;
+                border-radius: 33%;
+                background-color: rgb(18, 16, 16);
+                outline-width: medium;
+                outline-style: inset;
+                outline-color: transparent;
+                box-sizing: border-box;
+            }
+
+            .rating-highest {
+                outline-color: #62c1ff;
+            }
+
+            .rating-higher {
+                outline-color: #00ff00;
+            }
+
+            .rating-high {
+                outline-color: #18a318;
+            }
+
+            .rating-average {
+                outline-color: #d3b42a;
+            }
+
+            .rating-low {
+                outline-color: #c0501f;
+            }
+
+            .rating-lowest {
+                outline-color: #FF0000;
+            }
+
+            /*
+            .rating-highest::before {
+                font-size: 0.6rem;
+                content: "\2605";
+                color: #ffdb49;
+                bottom: 20%;
+                position: relative;
+            }
+
+            .rating-highest::after {
+                font-size: 0.6rem;
+                content: "\2605";
+                color: #ffdb49;
+                bottom: 20%;
+                position: relative;
+            }
+            */
+        </style>
+
+        <div>
+            <ul class="nav nav-tabs" role="tablist" id="mainTabs">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" role="tab" data-bs-toggle="tab" href="#artistsTab">Artists</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" role="tab" data-bs-toggle="tab" href="#albumsTab">Albums</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" role="tab" data-bs-toggle="tab" href="#tracksTab">Tracks</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" role="tab" data-bs-toggle="tab" href="#selectedAlbumsTab">Albums (Selected)</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" role="tab" data-bs-toggle="tab" href="#selectedTracksTab">Tracks (Selected)</a>
+                </li>
+                <li class="nav-item dropdown ms-auto">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" href="#" aria-expanded="false">Filter</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <label class="dropdown-item highlight-radio">
+                            <input type="radio" name="filter" value="Rated" checked="checked"> Rated
+                        </label>
+                        <label class="dropdown-item highlight-radio">
+                            <input type="radio" name="filter" value="Unrated"> Unrated
+                        </label>
+                        <label class="dropdown-item highlight-radio">
+                            <input type="radio" name="filter" value="All"> All
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <br />
+            <div class="tab-content">
+                <div id="artistsTab" class="tab-pane active" role="tabpanel">
+
+                    <table id="artistsTable" style="width:100%">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div id="albumsTab" class="tab-pane" role="tabpanel">
+
+                    <table id="albumsTable" style="width:100%">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div id="tracksTab" class="tab-pane" role="tabpanel">
+
+                    <table id="tracksTable" style="width:100%">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div id="selectedAlbumsTab" class="tab-pane" role="tabpanel">
+
+                    <table id="selectedAlbumsTable" style="width:100%">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div id="selectedTracksTab" class="tab-pane" role="tabpanel">
+
+                    <table id="selectedTracksTable" style="width:100%">
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    $(document).ready(async function ()
+    {
+        await Setup();
+        readjustTables();
+        ReloadData($('input[type=radio][name=filter]').val());
+    });
+
+    $('a[data-bs-toggle="tab"]').on("shown.bs.tab", readjustTables);
+    
+    $(document).on("shown.bs.collapse", readjustTables);
+
+    function readjustTables()
+    {
+        $($.fn.dataTable.tables(true))
+            .DataTable()
+            .columns.adjust();
+    }
+
+    $('input[type=radio][name=filter]').on('change', function(e) 
+    {
+        ReloadData($(this).val());
+    });
+
+    $(document).keydown(function(event) 
+    {
+        if ($(document.activeElement).is('input')) 
+        {
+            return;
+        }
+
+        function complete(event)
+        {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+            return false;
+        }
+
+        if (event.keyCode === 37) // Left arrow key
+        {
+            showTab(-1, true);
+            return complete(event);
+        }
+        else if (event.keyCode === 39)  // Right arrow key
+        {
+            showTab(+1, true);
+            return complete(event);
+        }
+    });
+
+    function showTab(position, isRelative)
+    {
+        if (isRelative)
+        {
+            let currentTab = $('.nav-link.active');
+            let currentIndex = currentTab.parent().index();
+            position += currentIndex;
+
+            let numTabs = $('#mainTabs > .nav-item:not(.dropdown)').length;
+            position = (position + numTabs) % numTabs;
+        }
+
+        $('#mainTabs > .nav-item:not(.dropdown)').eq(position).find('.nav-link').tab('show');
+    }
+
+</script>
+
+</html>
