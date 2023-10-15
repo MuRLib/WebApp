@@ -96,7 +96,7 @@ function InitializeDataTables()
         { title: "Rated"  , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
         { title: "Average", searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Best"   , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Artist" , searchable: true , visible: true , orderable: true , type: "string"  , width: "69%", className: "text-left fw-bold"  , render: render_artistRef },
+        { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "69%", className: "text-left fw-bold", render: render_artistRef },
         { title: "Albums" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selAlbums },
         { title: "Tracks" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
         { title: "Starred", searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
@@ -116,7 +116,7 @@ function InitializeDataTables()
         { title: "Average", searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Best"   , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Year"   , searchable: true , visible: true , orderable: true , type: "num"     , width: "6%" , className: "text-center", render: render_default },
-        { title: "Album"  , searchable: true , visible: true , orderable: true , type: "string"  , width: "35%", className: "text-left fw-bold"  , render: render_albumRef },
+        { title: "Album"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
         { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_artistRef },
         { title: "Tracks" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
         { title: "Starred", searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
@@ -135,7 +135,7 @@ function InitializeDataTables()
         { title: "Rated"   , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
         { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
         { title: "#"       , searchable: false, visible: false, orderable: false, type: "num"     , width: "4%" , className: "text-center", render: render_2digits },
-        { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold"  , render: render_ytlink },
+        { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold", render: render_ytlink },
         { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
         { title: "Album"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_albumRef },
         { title: "Artist"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_artistRef },
@@ -159,7 +159,7 @@ function InitializeDataTables()
         { title: "Average", searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Best"   , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Year"   , searchable: true , visible: true , orderable: true , type: "num"     , width: "6%" , className: "text-center", render: render_default },
-        { title: "Album"  , searchable: true , visible: true , orderable: true , type: "string"  , width: "35%", className: "text-left fw-bold"  , render: render_albumRef },
+        { title: "Album"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
         { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_default },
         { title: "Tracks" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
         { title: "Starred", searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
@@ -178,7 +178,7 @@ function InitializeDataTables()
         { title: "Rated"   , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
         { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
         { title: "#"       , searchable: false, visible: true , orderable: false, type: "num"     , width: "4%" , className: "text-center", render: render_2digits },
-        { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold"  , render: render_ytlink },
+        { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold", render: render_ytlink },
         { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
         { title: "Album"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_albumRef },
         { title: "Artist"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_artistRef },
@@ -466,8 +466,20 @@ function navigate_switch(sourceTableID, rowID, targetContext)
         }
         else if (targetContext == "EXTERNAL_SEARCH")
         {
-            var searchQuery = track.Artist.Name + " " + track.Name + " " + track.Album.Name;
-            var searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchQuery);
+            var s1 = track.Name;
+            var s2 = track.Artist.Name.replace(" (Various Artists)", "");
+            var s3 = track.Album.Name;
+            var query = s1;
+            if (s2 != s1)
+            {
+                query += " " + s2;
+            }
+            if (s3 != s2)
+            {
+                query += " " + s3;
+            }
+            
+            var searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
             window.open(searchUrl, '_blank');
             return;
         }
