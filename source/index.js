@@ -94,8 +94,8 @@ function InitializeDataTables()
     context.Artists.Columns = [
         { title: "ID"     , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
         { title: "Rated"  , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
-        { title: "Average", searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Average", searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "69%", className: "text-left fw-bold", render: render_artistRef },
         { title: "Albums" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selAlbums },
         { title: "Tracks" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
@@ -113,8 +113,8 @@ function InitializeDataTables()
     context.Albums.Columns = [
         { title: "ID"     , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
         { title: "Rated"  , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
-        { title: "Average", searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Average", searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Year"   , searchable: true , visible: true , orderable: true , type: "num"     , width: "6%" , className: "text-center", render: render_default },
         { title: "Album"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
         { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_artistRef },
@@ -133,7 +133,7 @@ function InitializeDataTables()
     context.Tracks.Columns = [
         { title: "ID"      , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
         { title: "Rated"   , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
-        { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
         { title: "#"       , searchable: false, visible: false, orderable: false, type: "num"     , width: "4%" , className: "text-center", render: render_2digits },
         { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold", render: render_ytlink },
         { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
@@ -156,8 +156,8 @@ function InitializeDataTables()
     context.SelectedAlbums.Columns = [
         { title: "ID"     , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
         { title: "Rated"  , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
-        { title: "Average", searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Average", searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
         { title: "Year"   , searchable: true , visible: true , orderable: true , type: "num"     , width: "6%" , className: "text-center", render: render_default },
         { title: "Album"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
         { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_default },
@@ -176,7 +176,7 @@ function InitializeDataTables()
     context.SelectedTracks.Columns = [
         { title: "ID"      , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
         { title: "Rated"   , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
-        { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
         { title: "#"       , searchable: false, visible: true , orderable: false, type: "num"     , width: "4%" , className: "text-center", render: render_2digits },
         { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold", render: render_ytlink },
         { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
@@ -288,37 +288,37 @@ function registerTrack(targetContext, track)
 function render_default   ( data, type, row, meta ) { return data; }
 function render_2digits   ( data, type, row, meta ) { return data.toString().padStart(2, '0'); }
 function render_duration  ( data, type, row, meta ) { return millisecondsToMMSS(data); }
-function render_1to100    ( data, type, row, meta ) { return ratingTo100(data); }
-function render_1to10     ( data, type, row, meta )
+
+function render_1to100    ( data, type, row, meta ) 
 {
     if ( type != 'display' && type != 'filter' )
     {
-        return Math.round(data * 10);
+        return Math.round(data * 100);
     }
 
     var className = "cell-rating";
-    var rating = ratingTo10(data);
+    var rating = ratingTo100(data);
     if (rating == "-")
     {
         className += " rating-none";
     }
-    else if (rating <= 4)
+    else if (rating <= 40)
     {
         className += " rating-lowest";
     }
-    else if (rating <= 5)
+    else if (rating <= 50)
     {
         className += " rating-low";
     }
-    else if (rating <= 6)
+    else if (rating <= 60)
     {
         className += " rating-average";
     }
-    else if (rating <= 7)
+    else if (rating <= 70)
     {
         className += " rating-high";
     }
-    else if (rating <= 8)
+    else if (rating <= 80)
     {
         className += " rating-higher";
     }
@@ -327,7 +327,53 @@ function render_1to10     ( data, type, row, meta )
         className += " rating-highest";
     }
 
-    return  render_span(rating, null, className);
+    return render_span(rating, null, className);
+}
+
+function render_1to10( data, type, row, meta )
+{
+    if ( type != 'display' && type != 'filter' )
+    {
+        return ratingTo10(data, null, true);
+    }
+
+    var className = "cell-rating";
+    var rating = ratingTo10(data, null, true);
+    if (rating == "-")
+    {
+        className += " rating-none";
+    }
+    else if (rating < 5)
+    {
+        className += " rating-lowest";
+    }
+    else if (rating < 6)
+    {
+        className += " rating-low";
+    }
+    else if (rating < 7)
+    {
+        className += " rating-average";
+    }
+    else if (rating < 8)
+    {
+        className += " rating-high";
+    }
+    else if (rating < 9)
+    {
+        className += " rating-higher";
+    }
+    else
+    {
+        className += " rating-highest";
+    }
+
+/*     if (rating >= 6 && rating <= 7 && (data * 10) % 1 > 0.5)
+    {
+        className += " rating-plus";
+    } */
+
+    return render_span(rating, null, className);
 }
  
 function render_artistRef ( data, type, row, meta ) { return render_link(data, type, row, meta, "context.SelectedAlbums","cell-button"); }
@@ -335,7 +381,14 @@ function render_albumRef  ( data, type, row, meta ) { return render_link(data, t
 function render_trackRef  ( data, type, row, meta ) { return render_link(data, type, row, meta, "context.Tracks", "cell-button"); }
 function render_selAlbums ( data, type, row, meta ) { return render_link(data, type, row, meta, "context.SelectedAlbums", "cell-button"); }
 function render_selTracs  ( data, type, row, meta ) { return render_link(data, type, row, meta, "context.SelectedTracks", "cell-button"); }
-function render_ytlink    ( data, type, row, meta ) { return render_link(data, type, row, meta, "'EXTERNAL_SEARCH'", "cell-button-yt"); }
+
+function render_ytlink    ( data, type, row, meta )
+{
+    const rowID = row[0];
+    const track = LibraryData.Tracks[rowID - 1];
+    const className = (track != null && LibraryData.IsVisited(track)) ?  "cell-button-yt visited" : "cell-button-yt";
+    return render_span(data, `navigate_switch('${meta.settings.sTableId}', ${rowID}, 'EXTERNAL_SEARCH')`, className);
+}
 
 function render_link      ( data, type, row, meta, targetContext, className ) 
 {
@@ -466,20 +519,8 @@ function navigate_switch(sourceTableID, rowID, targetContext)
         }
         else if (targetContext == "EXTERNAL_SEARCH")
         {
-            var s1 = track.Name;
-            var s2 = track.Artist.Name.replace(" (Various Artists)", "");
-            var s3 = track.Album.Name;
-            var query = s1;
-            if (s2 != s1)
-            {
-                query += " " + s2;
-            }
-            if (s3 != s2)
-            {
-                query += " " + s3;
-            }
-            
-            var searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
+            const query = LibraryData.CreateSearchKey(track, true);
+            const searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
             window.open(searchUrl, '_blank');
             return;
         }

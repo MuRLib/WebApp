@@ -8,18 +8,59 @@ function makeSimpleID(...args)
     return args.join("/").replace(/[^a-zA-Z0-9-]/g, "-");
 }
 
-function ratingTo10(rating, suffix)
-{
-    rating = parseFloat(rating);
-    suffix ??= "";
-    return rating <= 0 ? "-" : (Math.round(rating * 10) + suffix);
-}
-
 function ratingTo100(rating, suffix)
 {
     rating = parseFloat(rating);
     suffix ??= "";
     return rating <= 0 ? "-" : (Math.round(rating * 100) + suffix);
+}
+
+function ratingTo10(rating, suffix, useCustomFormula)
+{
+    suffix ??= "";
+    rating = parseFloat(rating);
+
+    if (rating <= 0)
+    {
+        return "-";
+    }
+
+    rating *= 10;
+
+    if (useCustomFormula)
+    {
+        const decimals = rating % 1;
+        if (decimals >= 0.75)
+        {
+            rating = Math.ceil(rating);
+        }
+        else if (decimals >= 0.25 && rating > 6 && rating < 8)
+        {
+            rating = Math.floor(rating) + 0.5;
+        }
+        else
+        {
+            rating = Math.floor(rating);
+        }
+    }
+    else
+    {
+        rating = roundAbove(rating, 0.75);
+    }
+
+    if (suffix)
+    {
+        return rating + suffix;
+    }
+    else
+    {
+        return rating;
+    }
+}
+
+function roundAbove(number, threshold)
+{
+    return (number % 1) < threshold ? Math.floor(number) : Math.ceil(number);
 }
 
 function millisecondsToMMSS(milliseconds) {

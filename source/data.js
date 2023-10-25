@@ -1,5 +1,27 @@
-/** @type {MusicLibrary } */
-let LibraryData = null;
+class PersistentData
+{
+    /** @type {Set<String>  } */ 
+	VisitedLink;
+
+    Load()
+    {
+        const keys = localStorage.getItem("AppData-v1");
+        if (keys != null)
+        {
+            this.VisitedLink = new Set(keys.split('\u001f'));
+        }
+        else
+        {
+            this.VisitedLink = new Set();
+        }
+    }
+
+    Save()
+    {
+        const array = Array.from(this.VisitedLink);
+        localStorage.setItem("AppData-v1", array.join('\u001f'));
+    }
+}
 
 class MusicLibrary
 {
@@ -9,6 +31,50 @@ class MusicLibrary
 	Albums;
     /** @type {Track[]  } */
 	Tracks;
+
+    IsVisited(track)
+    {
+        return persistentData.VisitedLink.has(this.CreateSearchKey(track, false));
+    }
+
+    ExternalSearch(item, type)
+    {
+        if (type != Artist && type != Album && type != Track)
+        {
+            throw "Invalid type";
+        }
+
+        // TODO: https://www.allmusic.com/search/{type}/{query}
+    }
+
+    CreateSearchKey(track, visiting)
+    {
+        if (track.SearchKey == null)
+        {
+            var s1 = track.Name;
+            var s2 = track.Artist.Name.replace(" (Various Artists)", "");
+            var s3 = track.Album.Name;
+            var key = s1;
+            if (s2 != s1)
+            {
+                key += " " + s2;
+            }
+            if (s3 != s2)
+            {
+                key += " " + s3;
+            }
+
+            track.SearchKey = key;
+        }
+
+        if (visiting && !persistentData.VisitedLink.has(track.SearchKey))
+        {
+            persistentData.VisitedLink.add(track.SearchKey);
+            persistentData.Save();
+        }
+
+        return track.SearchKey;
+    }
 }
 
 class Artist
@@ -51,7 +117,7 @@ class Album
 	/** @type {String  } */ 
 	Name;
     /** @type {Number  } */
-    Year;
+    Year;   
     /** @type {Number  } */
     AverageRating;
     /** @type {Number  } */
@@ -97,14 +163,24 @@ class Track
 	Album;
     /** @type {Boolean } */
 	Rated;
+
+	/** @type {String  } */ 
+	SearchKey;
 }
+
+/** @type {MusicLibrary } */
+let LibraryData = null;
+/** @type {PersistentData } */
+const persistentData = new PersistentData();
 
 async function LoadLibraryData()
 {
+    persistentData.Load();
+
     const downloadURL = "https://dl.dropboxusercontent.com/s/p2ged3o798viyz2kw9ax5/MusicReport.json?rlkey=5yp8xs39at749s5p5ymc3gj30&raw=1";
     await fetch(downloadURL)
     .then(response => response.json())
-    .then(data => LibraryData = data)
+    .then(data => LibraryData = Object.assign(new MusicLibrary, data))
     .catch(error => {
         console.error('Error fetching and parsing JSON:', error);
     });
