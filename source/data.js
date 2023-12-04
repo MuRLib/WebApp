@@ -130,6 +130,8 @@ class Album
     TotalStarredTracks;
     /** @type {Number[] } */
 	TrackIDs;
+    /** @type {Number  } */
+    Duration;
 
     /** @type {Artist  } */
 	Artist;

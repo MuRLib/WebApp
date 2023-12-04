@@ -111,15 +111,16 @@ function InitializeDataTables()
     });
 
     context.Albums.Columns = [
-        { title: "ID"     , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
-        { title: "Rated"  , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
-        { title: "Average", searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Year"   , searchable: true , visible: true , orderable: true , type: "num"     , width: "6%" , className: "text-center", render: render_default },
-        { title: "Album"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
-        { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_artistRef },
-        { title: "Tracks" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
-        { title: "Starred", searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
+        { title: "ID"      , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
+        { title: "Rated"   , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
+        { title: "Average" , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Best"    , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Year"    , searchable: true , visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_default },
+        { title: "Album"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
+        { title: "Artist"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_artistRef },
+        { title: "Tracks"  , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_selTracs },
+        { title: "Starred" , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_selTracs },
+        { title: "Duration", searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_duration },
     ];
     context.Albums.Table.DataTable({
         ...defaultSettings,
@@ -154,15 +155,16 @@ function InitializeDataTables()
     });
 
     context.SelectedAlbums.Columns = [
-        { title: "ID"     , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
-        { title: "Rated"  , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
-        { title: "Average", searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Best"   , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
-        { title: "Year"   , searchable: true , visible: true , orderable: true , type: "num"     , width: "6%" , className: "text-center", render: render_default },
-        { title: "Album"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
-        { title: "Artist" , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_default },
-        { title: "Tracks" , searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
-        { title: "Starred", searchable: false, visible: true , orderable: true , type: "html-num", width: "7%" , className: "text-center", render: render_selTracs },
+        { title: "ID"      , searchable: false, visible: false, orderable: false, type: "num"     , width: "0%" , className: "text-center", render: render_default },
+        { title: "Rated"   , searchable: false, visible: false, orderable: false, type: "string"  , width: "0%" , className: "text-center", render: render_default },
+        { title: "Average" , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Best"    , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
+        { title: "Year"    , searchable: true , visible: true , orderable: true , type: "num"     , width: "5%" , className: "text-center", render: render_default },
+        { title: "Album"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left fw-bold", render: render_albumRef },
+        { title: "Artist"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "35%", className: "text-left"  , render: render_default },
+        { title: "Tracks"  , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_selTracs },
+        { title: "Starred" , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_selTracs },
+        { title: "Duration", searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_duration },
     ];
     context.SelectedAlbums.Table.DataTable({
         ...defaultSettings,
