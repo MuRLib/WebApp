@@ -137,9 +137,9 @@ function InitializeDataTables()
         { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
         { title: "#"       , searchable: false, visible: false, orderable: false, type: "num"     , width: "4%" , className: "text-center", render: render_2digits },
         { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold", render: render_ytlink },
-        { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
         { title: "Album"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_albumRef },
         { title: "Artist"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_artistRef },
+        { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
     ];
     context.Tracks.Table.DataTable({
         ...defaultSettings,
@@ -181,9 +181,9 @@ function InitializeDataTables()
         { title: "Rating"  , searchable: false, visible: true , orderable: true , type: "html-num", width: "5%" , className: "text-center", render: render_1to10 },
         { title: "#"       , searchable: false, visible: true , orderable: false, type: "num"     , width: "4%" , className: "text-center", render: render_2digits },
         { title: "Title"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "30%", className: "text-left fw-bold", render: render_ytlink },
-        { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
         { title: "Album"   , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_albumRef },
         { title: "Artist"  , searchable: true , visible: true , orderable: true , type: "html"    , width: "27%", className: "text-left"  , render: render_artistRef },
+        { title: "Duration", searchable: false, visible: true , orderable: true , type: "string"  , width: "7%" , className: "text-center", render: render_duration },
     ];
     context.SelectedTracks.Table.DataTable({
         ...defaultSettings,
@@ -282,15 +282,23 @@ function registerTrack(targetContext, track)
         track.Rating,
         track.Index,
         track.Name,
-        track.Duration,
         track.Album?.Name ?? "-",
         track.Artist?.Name ?? "-",
+        track.Duration,
     ]);
 }
 
 function render_default   ( data, type, row, meta ) { return data; }
 function render_2digits   ( data, type, row, meta ) { return data.toString().padStart(2, '0'); }
-function render_duration  ( data, type, row, meta ) { return millisecondsToMMSS(data); }
+function render_duration  ( data, type, row, meta ) 
+{
+    if ( type != 'display' && type != 'filter' )
+    {
+        return parseInt(data);
+    }
+
+    return millisecondsToMMSS(data);
+}
 
 function render_1to100    ( data, type, row, meta ) 
 {
