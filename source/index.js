@@ -270,6 +270,7 @@ function registerAlbum(targetContext, album)
         album.Artist?.Name ?? "-",
         album.TotalTracks,
         album.TotalStarredTracks,
+        album.Duration
     ]);
 }
 
